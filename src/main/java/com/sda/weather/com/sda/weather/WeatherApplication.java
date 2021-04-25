@@ -1,4 +1,4 @@
-package com.sda.weather;
+package com.sda.weather.com.sda.weather;
 
 import com.sda.weather.com.sda.weather.UserInterface;
 
