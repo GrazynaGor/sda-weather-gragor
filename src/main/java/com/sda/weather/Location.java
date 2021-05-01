@@ -1,6 +1,15 @@
-package com.sda.weather.com.sda.weather;
+package com.sda.weather;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Location {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
     String cityName;
     String longitude; // długość geograficzna
     String latitude;// szerokość geograficzna
@@ -15,12 +24,21 @@ public class Location {
         this.country = country;
     }
 
-    public Location(String cityName, String longitude, String latitude, String region, String country) {
+    public Location(Long id, String cityName, String longitude, String latitude, String region, String country) {
+        this.id = id;
         this.cityName = cityName;
         this.longitude = longitude;
         this.latitude = latitude;
         this.region = region;
         this.country = country;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getCityName() {
