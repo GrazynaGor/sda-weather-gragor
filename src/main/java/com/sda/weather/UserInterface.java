@@ -1,14 +1,13 @@
 package com.sda.weather;
 
-import java.net.URI;
 import java.net.http.HttpClient;
 import java.util.Scanner;
 
 public class UserInterface {
 
-    private LocalController localController;
+    private LocationController localController;
 
-    public UserInterface(LocalController localController) {
+    public UserInterface(LocationController localController) {
         this.localController = localController;
     }
 
@@ -49,21 +48,26 @@ public class UserInterface {
     }
 
     private void showMyLocations() {
-        System.out.println("Pokazuje wpisane Twoje lokalizacje pogodowe: ");
+        System.out.println("Twoje lokalizacje pogodowe: ");
     }
 
     private void addWeatherLocation() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Podaj nazwę miasta: ");
         String cityName = scanner.nextLine();
+
         System.out.println("Podaj szerokość geograficzną: ");
-        String latitude = scanner.nextLine();
+        int latitude = scanner.nextInt();
+
         System.out.println("Podaj długość geograficzną: ");
-        String longitude = scanner.nextLine();
+        int longitude = scanner.nextInt();
+
         System.out.println("Podaj nazwę regionu: ");
         String region = scanner.nextLine();
+
         System.out.println("Podaj nazwę kraju: ");
         String country = scanner.nextLine();
+
         String response = localController.addWeatherLocation(cityName, latitude, longitude, region, country);
         System.out.println("Lokalizacja została dodana! " + response);
     }

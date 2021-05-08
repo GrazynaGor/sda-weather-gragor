@@ -1,6 +1,6 @@
 package com.sda.weather;
 
-public interface LocalRepository {
+public interface LocationRepository {
 
     Location save(Location location);
 

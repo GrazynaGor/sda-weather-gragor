@@ -14,10 +14,11 @@ public class WeatherApplication {
                 .buildMetadata()
                 .buildSessionFactory();
 
-        LocalRepository localRepository = new LocalRepositoryImpl(sessionFactory);
-        LocalService localService = new LocalService(localRepository);
-        LocalController localController = new LocalController(localService);
-        UserInterface userInterface = new UserInterface(localController);
+        LocationRepository locationRepository = new LocationRepositoryImpl(sessionFactory);
+        LocationService locationService = new LocationService(locationRepository);
+        LocationController locationController = new LocationController(locationService);
+
+        UserInterface userInterface = new UserInterface(locationController);
         userInterface.runWeatherApplication();
     }
 }

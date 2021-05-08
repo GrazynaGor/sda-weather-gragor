@@ -11,8 +11,8 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String cityName;
-    String longitude; // długość geograficzna
-    String latitude;// szerokość geograficzna
+    int longitude; // długość geograficzna
+    int latitude;// szerokość geograficzna
     String region;
     String country;
 
@@ -24,7 +24,7 @@ public class Location {
         this.country = country;
     }
 
-    public Location(Long id, String cityName, String longitude, String latitude, String region, String country) {
+    public Location(Long id, String cityName, int longitude, int latitude, String region, String country) {
         this.id = id;
         this.cityName = cityName;
         this.longitude = longitude;
@@ -49,19 +49,19 @@ public class Location {
         this.cityName = cityName;
     }
 
-    public String getLongitude() {
+    public int getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(int longitude) {
         this.longitude = longitude;
     }
 
-    public String getLatitude() {
+    public int getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(int latitude) {
         this.latitude = latitude;
     }
 

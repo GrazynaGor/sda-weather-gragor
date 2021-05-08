@@ -4,11 +4,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-public class LocalRepositoryImpl implements LocalRepository{
+public class LocationRepositoryImpl implements LocationRepository {
 
     private SessionFactory sessionFactory;
 
-    public LocalRepositoryImpl(SessionFactory sessionFactory) {
+    public LocationRepositoryImpl(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
