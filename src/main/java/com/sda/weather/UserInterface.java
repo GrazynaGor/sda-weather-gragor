@@ -43,7 +43,6 @@ public class UserInterface {
     }
 
     private void downloadWeatherForMyLocation() {
-        HttpClient client;
         System.out.println("Pobieram pogodę");
     }
 

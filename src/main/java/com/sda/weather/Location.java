@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Location {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -19,7 +20,7 @@ public class Location {
     public Location() {
     }
 
-    public Location(String cityName, String country) {
+    public Location(String cityName, String country) {  // todo it's unnecessary
         this.cityName = cityName;
         this.country = country;
     }
